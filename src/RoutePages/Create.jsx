@@ -1,102 +1,101 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { makeStyles } from '@mui/styles';
 import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 
+const Create = () => {
+  const [title, setTitle]=useState('')
+  const [details, setDetails]=useState('')
+  const [titleError, setTitleError]=useState(false)
+  const [detailsError, setDetailsError]=useState(false)
+  const [category, setCategory]=useState('work')
 
-const useStyles = makeStyles({
-  beaut:{
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    color: 'white',
-    height: 36.5,
-    padding: '0 30px',
-    '&:hover':{
-      background: 'linear-gradient(45deg,  #FF8E53 30%,  #FE6B8B 90%)',
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setTitleError(false)
+    setDetailsError(false)
 
+    if( title === ''){
+      setTitleError(true)
     }
-  }, 
-  fave:{
-    backgroundColor: '#f44336',
-    '&:hover':{
-      background: '#eb3326',
+
+    if( details === ''){
+      setDetailsError(true)
+    }
+
+    if(title && details){
+      console.log(title, details, category)
 
     }
   }
 
-})
-
-const Create = () => {
-  const classes = useStyles()
 
   return (
     <Container>
-        <Typography 
-        variant='h6'
-        color='textSecondary'
-        component='h2'
+              <Typography
+        variant="h6" 
+        color="textSecondary"
+        component="h2"
         gutterBottom
-        >
-        Create a New Button
-        </Typography>
+      >
+        Create a New Note
+      </Typography>
 
-        <form noValidate autoComplete='off'>
+        <form noValidate autoComplete='off' onSubmit={handleSubmit}>
         <TextField 
-        sx={{mb:2, width:'31em'}}
+        onChange={(e)=>{setTitle(e.target.value)}}
+        sx={{mb:2}}
         id="filled-basic" 
-        label="Your Text" 
-        variant="filled" 
+        label="Title" 
+        variant="outlined" 
         fullWidth 
-        color='secondary' 
+        color='primary' 
         required
+        error={titleError}
         />
-        </form>
+
+        <TextField 
+        onChange={(e)=>{setDetails(e.target.value)}}
+        sx={{mb:2}}
+        id="filled-basic" 
+        label="Details" 
+        variant="outlined" 
+        color='primary' 
+        rows={4}
+        multiline
+        fullWidth 
+        required
+        error={detailsError}
+        />
+
+        <FormControl sx={{display:'flex', mb:1.5}}>
+          <FormLabel>Category</FormLabel>
+          <RadioGroup sx={{display:'block'}} value={category} onChange={(e)=>{setCategory(e.target.value)}}>
+            <FormControlLabel value="work" control={<Radio/>} label="Work" />
+            <FormControlLabel value="school" control={<Radio/>} label="School" />
+            <FormControlLabel value="todo" control={<Radio/>} label="Todo" />
+            <FormControlLabel value="none" control={<Radio/>} label="None" />
+          </RadioGroup>
+        </FormControl>
 
         <Button type='submit' 
         sx={{mr:1}}
         variant='contained' 
-        color='secondary'
+        color='primary'
         endIcon={<SendRoundedIcon />}
         disableElevation
         >Submit
-        </Button>
-        
-        <Button 
-        className={classes.fave}
-        sx={{mr:1}}
-        type='submit' 
-        variant='contained' 
-        color='primary'
-        endIcon={<FavoriteIcon />}
-        disableElevation
-        >Favorite</Button>
-
-        <Button type='submit' 
-        sx={{mr:1}}
-        variant='contained' 
-        color='primary'
-        startIcon={<PlayArrowIcon />}
-        disableElevation
-        >Play</Button>
-
-        <Button 
-        sx={{mr:1}}
-        className={classes.beaut}
-        type='submit' 
-        variant='contained' 
-        color='primary'
-        startIcon={<PlayArrowIcon />}
-        disableElevation
-        >Beautify</Button>
-        
+        </Button>      
        
+        </form>
 
     </Container>
   )
