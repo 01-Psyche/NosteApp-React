@@ -1,0 +1,52 @@
+{
+  "notes": [
+    {
+      "title": "Lorem! Lorem! Lorem!",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "school",
+      "id": 1
+    },
+    {
+      "title": "Complete my MUI training",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "category": "work",
+      "id": 2
+    },
+    {
+      "title": "Shop Groceries",
+      "details": "Buy Garri, Groundnut, Sugar, Milk ",
+      "category": "todo",
+      "id": 4
+    },
+    {
+      "title": "Burna Boy Album",
+      "details": "I Told Them... is the seventh studio album by Nigerian singer Burna Boy. It was released on 25 August 2023 through Atlantic, Spaceship Records, and Bad Habit. The album features guest appearances from 21 Savage, Dave, Seyi Vibez, J. Cole, GZA and RZA of the Wu-Tang Clan, and Byron Messia.",
+      "category": "none",
+      "id": 5
+    },
+    {
+      "title": "Math Homework",
+      "details": "Remember to complete the exercises on pages 30-32 in the math textbook by Friday.\n\n",
+      "category": "school",
+      "id": 7
+    },
+    {
+      "title": "Meeting Agenda",
+      "details": "Prepare the agenda for the team meeting scheduled for Monday. Include updates on project status, upcoming deadlines, and any blockers.\n\n",
+      "category": "work",
+      "id": 8
+    },
+    {
+      "title": "Grocery Shopping",
+      "details": "Buy milk, eggs, bread, and vegetables from the supermarket after work today.\n",
+      "category": "todo",
+      "id": 9
+    },
+    {
+      "title": "weekend plans",
+      "details": "Enjoy a relaxing weekend with some reading, a hike, and quality time with family.",
+      "category": "work",
+      "id": 10
+    }
+  ]
+}

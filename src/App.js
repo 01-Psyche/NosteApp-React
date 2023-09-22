@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Create from "./RoutePages/Create";
 import Notes from "./RoutePages/Notes";
+import View from "./RoutePages/View";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Layout from "./components/Layout";
 
 const theme = createTheme({
   palette: {
@@ -26,10 +28,13 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div>
         <Router>
-          <Routes>
-            <Route path="/" element={<Create />} />
-            <Route path="/Notes" element={<Notes />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Notes />} />
+              <Route path="/create" element={<Create />} />
+              <Route path="/view" element={<View />} />
+            </Routes>
+          </Layout>
         </Router>
       </div>
     </ThemeProvider>
