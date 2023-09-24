@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Create from "./RoutePages/Create";
 import Notes from "./RoutePages/Notes";
-import View from "./RoutePages/View";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Layout from "./components/Layout";
 
@@ -32,7 +31,6 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Notes />} />
               <Route path="/create" element={<Create />} />
-              <Route path="/view" element={<View />} />
             </Routes>
           </Layout>
         </Router>

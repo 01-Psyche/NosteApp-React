@@ -184,20 +184,6 @@ const Layout = ({ children }) => {
           ))}
         </List>
       </Drawer>
-
-      {/* Side Bar */}
-      {/* <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="permanent"
-        anchor="left"
-      ></Drawer> */}
       <div>{children}</div>
     </Box>
   );

@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import { useNavigate } from "react-router-dom";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -18,8 +17,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const NoteCard = ({ note, handleDelete }) => {
-  const navigate = useNavigate();
-
   const noteColor = (category) => {
     if (category === "work") {
       return "#b3e5fc";
@@ -54,12 +51,7 @@ const NoteCard = ({ note, handleDelete }) => {
   return (
     <Box>
       <DrawerHeader />
-      <Card
-        sx={{ backgroundColor: colorOfCard, cursor: "pointer" }}
-        onClick={() => {
-          navigate("/view");
-        }}
-      >
+      <Card sx={{ backgroundColor: colorOfCard, cursor: "pointer" }}>
         <CardHeader
           action={
             <IconButton
